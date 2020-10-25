@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122158563-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122158563-4');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rewrite your article or essay using superior vocabulary</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <!--GOOGLE FONT-->
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:700|Alegreya:500|Shrikhand&display=swap" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <style>
+  body {
+
+    font-family: "Arial", "Helvetica", "sans-serif";
+  }
+  .has-background-danger {
+    background: linear-gradient(0deg, rgba(255,91,0,1) 10%, rgba(255,26,0,1) 50%, rgba(255,91,0,1) 100%) !important;
+  }
+
+  .is-danger {
+    background-color: #ff1a00 !important;
+  }
+
+  .changed-word {
+    font-weight: bold;
+    color: #ff1a00;
+    text-decoration-color: #ff1a00;
+  }
+</style>
+</head>
+<body class="has-background-white-ter">
+
+
+  <!--Header and Logo-->
+  <div style="padding-top: 15px; padding-bottom: 15px;" class="columns has-text-centered has-background-danger">
+    <div class="column is-one-quarter"></div>
+    <div class="column is-one-half">
+      <h1 style="color: white; font-family: 'Alegreya', serif;" class="title is-1"><i class="fas fa-pepper-hot"></i>&nbsp;Spicy Writer</h1>
+      <h1 style="color: white;font-family: 'Alegreya', serif;" class="subtitle is-4">Rewrite your article. Rephrase your essay.</h1>
+    </div>
+    <div class="column is-one-quarter"></div>
+  </div>
+
+  <!--MAIN APPLICATION / 2 BOXES AND BUTTON -->
+
+  <div style="min-height: 55vh; padding-bottom: 75px;" class="container is-fluid columns">
+    <div class="column">
+      <center><h1 style="padding-bottom: 10px; font-family: 'Alegreya', serif;" class="title is-3">Input</h1></center>
+      <textarea style="height: 100%" class="textarea is-normal" name="userInput" id="userInput">Your first step before submitting your article or essay is to always use Spicy Writer! If you want to get praise from other people for your writing, then let this generator do the work for you. You will find that just a few words can change bad pieces of writing to good ones.</textarea>
+      <center><p style="padding-top: 15px;"><strong>* 1,000 Character limit.</strong></p></center>
+    </div>
+
+    <div class="level">
+      <div class="column">
+        <center><h1 style="padding-bottom: 10px;visibility: hidden;" class="title is-3">Spice it up!</h1></center>
+        <center>
+          <button style="font-family: 'Alegreya', serif;" onclick="validate();" class="button is-danger is-medium is-rounded"><b>Make it Spicy</b>&nbsp;<i class="fas fa-pepper-hot fa-spin"></i></button>
+          <p style="color:red;" id="validationMessage"></p>
+        </center>
+      </div> 
+    </div>
+
+    <div class="column">
+     <center><h1 style="padding-bottom: 10px; font-family: 'Alegreya', serif;" class="title is-3">Output</h1></center>
+     <p contenteditable="true" style="height: 100%" class="textarea is-normal" placeholder="This will be the final output" name="output" id="output"></p>
+     <center><p style="padding-top: 15px;">Enjoy your <i>spiced up</i> work!</p></center>
+
+   </div>
+ </div>
+
+
+
+
+ <!--SEOH AND BODY COPY-->
+ <section class="container is-fluid box">
+  <div class="columns">
+    <div class="column">
+      <center>
+        <img width="100px" height="100px" src="https://image.flaticon.com/icons/svg/917/917219.svg">
+      </center>
+      <h1 class="title is-4 has-text-centered">Use Better Vocabulary</h1>
+
+      <p>No one wants to be known as the boring writer. Spice up your writing using our rewording synonym generator. Our online rephrasing generator will remove all the most common-used words in your text, and replace them with more eloquent choices.</p> <br>
+      <p>This rephrasing synonym generator has a list of <STRONG>the most commonly used words in the English language</STRONG>. Substituting those words with others of the same meaning will help you create a more unique, and elegant piece of writing.</p>
+    </div>
+
+
+    <div class="column">
+     <center>
+      <img style="padding: 10px" width="100px" height="100px" src="https://image.flaticon.com/icons/svg/971/971187.svg">
+    </center>
+    <h1 class="title is-4 has-text-centered">Prevent Plagiarizing</h1>
+    <p>Most plagiarizing can be boiled down to two types: <strong>intended and accidental</strong>. While we never condone or support plagiarizing, it is inevitable that accidental plagiarizing will happen to some people. Using our online synonym generator will give you peace of mind over your writing.</p> <br>
+    <p>Our generator will rephrase your writing with more unique word choices, lowering your chance of accidentally plagiarizing another person's work. By rephrasing and rewording your essay or article, your writing becomes more unique - while making it a more interesting piece!</p>
+  </div>
+</div>
+</section>
+</body>
+
+
+<script type="text/javascript">
+
+
+
+
+ function validate() {
+
+  console.log("Step 1: Validation starting");
+
+              //CHECKS TO SEE IF THERE'S ANY INPUT AT ALL FROM USER
+              if (document.getElementById("userInput").value == '') {
+
+                document.getElementById("validationMessage").innerHTML = "Nothing detected. Please make sure you've pasted something in the first box.";
+                
+              }
+
+              else if (document.getElementById("userInput").value.length > 1000) {
+
+                document.getElementById("validationMessage").innerHTML = "Please use less than 1,000 characters";
+                
+              }
+
+              else {
+                document.getElementById("validationMessage").innerHTML = "";
+                populateForm();
+                
+              }
+
+            }
+
+
+
+            function populateForm() {
+              console.log("Step 2: Sending Ajax to Server");
+              userInput = document.getElementById("userInput").value
+              console.log(typeof userInput)
+              //AJAX TO PROCESS INPUT TO NODEJS
+              $.ajax({
+                url: '/submit',
+                type: 'POST',
+                contentType: "application/json; charset=utf-8",
+                data: {userInput: userInput},
+                success: (userInput) => {
+                  console.log("Step 3: Ajax request successful");
+
+                  document.getElementById("output").innerHTML = userInput;
+
+                }
+
+
+              });
+
+
+            }
+
+
+
+
+//on window load, click the button for initial text to be populated
+window.onload = populateForm();
+
+</script>
+</html>
