@@ -19,7 +19,6 @@ app.post('/submit', function (req, res) {
   const spicyWords = ["final", "initial", "obtain", "egregious", "dreadful", "incorrect", "reasoned", "favorable", "generate", "harsh", "sophisticated", "plethora", "occur", "occurs", "individual", "nourished", "expired", "anticipate", "pierce", "wound", "acquired", "express", "expressed", "concur", "suspect", "possess", "progress", "justify", "produced", "individuals", "realize", "discover", "searched", "numerous", "alternative", "transform", "obtaining", "enquire", "enquiry", "frequently", "grant", "inform", "informed", "magnitude", "marginal", "objective", "partially", "perform", "place", "projected", "purchase", "purchased", "remain", "reside", "retain", "select", "ultimately", "zone", "virtually", "upcoming", "modern", "resemble", "resembles", "finest", "outstanding", "endless", "ancient", "crucial", "depressed", "sorrow", "gracious", "humorous", "minute", "colossal", "stunning"];
 
   //Validate here to make sure it's under 1000 characters
-
   if (userInput.length > 1000) {
     res.send("Your input is not valid. Please make sure your total character limit is under 1000");
 
