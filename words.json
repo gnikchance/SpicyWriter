@@ -5,7 +5,17 @@
 
 { "words": [
     { "boringWords": "last", "spicyWords": "final" },
-    { "boringWords": "last", "spicyWords": "final" },
-    { "boringWords": "last", "spicyWords": "final" },
-
+    { "boringWords": "first", "spicyWords": "inital" },
+    { "boringWords": "get", "spicyWords": "obtain" },
+    { "boringWords": "bad", "spicyWords": "egregious" },
+    { "boringWords": "terrible", "spicyWords": "dreadful" },
+    { "boringWords": "wrong", "spicyWords": "incorrect" },
+    { "boringWords": "thought", "spicyWords": "reasoned" },
+    { "boringWords": "good", "spicyWords": "favorable" },
+    { "boringWords": "make", "spicyWords": "generate" },
+    { "boringWords": "mean", "spicyWords": "harsh" },
+    { "boringWords": "smart", "spicyWords": "sophisticated" },
+    { "boringWords": "alot", "spicyWords": "plethora" },
+    { "boringWords": "happen", "spicyWords": "occur" }
+    
 ] }

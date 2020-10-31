@@ -56,7 +56,7 @@
 
 
   <!--Header and Logo-->
-  <div style="padding-top: 15px; padding-bottom: 15px;" class="columns has-text-centered has-background-danger">
+  <div style="padding-top: 15px; padding-bottom: 15px;border-bottom: 4px solid orange;" class="columns has-text-centered has-background-danger">
     <div class="column is-one-quarter"></div>
     <div class="column is-one-half">
       <h1 style="color: rgb(223, 221, 221); font-family: 'Alegreya', serif;" class="title is-1"><i
@@ -75,7 +75,7 @@
       <center>
         <h1 style="padding-bottom: 10px; font-family: 'Alegreya', serif;" class="title is-3">Input</h1>
       </center>
-      <textarea style="height: 80%" class="textarea is-normal" name="userInput"
+      <textarea style="height: 80%;" class="textarea is-normal" name="userInput"
         id="userInput">Your first step before submitting your article or essay is to always use Spicy Writer! If you want to get praise from other people for your writing, then let this generator do the work for you. You will find that just a few words can change bad pieces of writing to good ones.</textarea>
       <center>
         <p style="padding-top: 15px;"><strong>* 1,000 Character limit.</strong></p>
@@ -92,6 +92,8 @@
             class="button is-danger is-medium is-rounded"><b>Make it Spicy</b>&nbsp;<i
               class="fas fa-pepper-hot fa-spin"></i></button>
           <p style="color:red;" id="validationMessage"></p>
+          <!-- TONE ANALYZER COMING SOON -->
+          <!-- <p class="is-size-5" style="color:red;font-weight: bold;padding-top: 20px;" id="toneOutput"></p> -->
         </center>
       </div>
     </div>
@@ -114,7 +116,8 @@
 
 
   <!--SEOH AND BODY COPY-->
-  <h1 style="font-family: 'Alegreya', serif;margin: 0;padding-top: 15px;padding-bottom: 25px;" 
+  <h1 style="font-family: 'Alegreya', serif;margin: 0;padding-top: 15px;padding-bottom: 25px;letter-spacing: 1px;
+  border-top: 4px solid orangered;" 
   class="title is-2 has-text-centered has-background-black-ter has-text-light is-fluid">Features</h1>
 
   <section style="margin-bottom: 0px;" class="is-fluid has-background-black-ter has-text-light columns">
@@ -156,7 +159,8 @@
           <img style="padding: 10px" width="100px" height="100px"
             src="https://www.flaticon.com/svg/static/icons/svg/2229/2229975.svg">
         </center>
-        <h1 style="color:rgb(221, 88, 73)" class="title is-4 has-text-centered">Analyze Tone</h1>
+        <h1 style="color:rgb(221, 88, 73)" class="title is-4 has-text-centered">Analyze Tone<br><span 
+          style="color: rgb(241, 42, 42); font-size: .8em;">(Coming Soon)</span></h1>
         <p>Tone dictates how <strong style="color:rgb(221, 88, 73)">how viewers hear your voice</strong>. Controlling tone is one of 
         the most important aspects of succesfully presenting one's thoughts.</p> <br>
         <p>Using A.I. (artificial intelligence), SpicyWriter helps analyze the tone of your text. Understanding how readers will view your 
@@ -182,7 +186,7 @@
     if (document.getElementById("userInput").value == '') {
 
       document.getElementById("validationMessage").innerHTML = "Nothing detected. Please make sure you've pasted something in the first box.";
-
+      document.getElementById("toneOutput").innerHTML = "";
     }
 
     else if (document.getElementById("userInput").value.length > 1000) {
@@ -202,7 +206,7 @@
 
 
   function populateForm() {
-    console.log("Step 2: Sending Ajax to Server");
+    console.log("Step 2: Sending Request to Server");
     userInput = document.getElementById("userInput").value
 
     //AJAX TO PROCESS INPUT TO NODEJS
@@ -211,9 +215,29 @@
       type: 'POST',
       data: {userInput: userInput},
       success: (userInput) => {
-        console.log("Step 3: Ajax request successful");
 
+        console.log("Step 3: Ajax request successful");
         document.getElementById("output").innerHTML = userInput;
+
+        // console.log("Step 4: Analyzing Tone");
+        // analyze();
+      }
+
+
+    });
+  }
+
+  function analyze(){
+    userInput = document.getElementById("userInput").value
+    //AJAX TO PROCESS INPUT TO NODEJS
+    $.ajax({
+      url: '/analyze',
+      type: 'POST',
+      data: {userInput: userInput},
+      success: (res) => {
+
+        document.getElementById("toneOutput").innerHTML = "Tone: " + res;
+        console.log("Step 5: Succesfully Analyzed Tone");
 
       }
 
@@ -221,9 +245,7 @@
     });
 
 
-  }
-
-
+}
 
 
   //on window load, click the button for initial text to be populated

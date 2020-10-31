@@ -49,15 +49,18 @@ app.post('/submit', function (req, res) {
     userInputArray = userInputArray.join(" ");
     userInput = userInputArray;
 
-
-
-
     //display new string back to client is done via ajax SUCCESS in HTML file
     res.send(userInput);
 
   }
 
 });
+
+app.post('/analyze', function(req, res){
+
+res.send('TONE ANALYZER COMING SOON');
+
+})
 
 app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
