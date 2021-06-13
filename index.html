@@ -18,8 +18,8 @@
   <title>Rewrite your article or essay using superior vocabulary</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   <!--GOOGLE FONT-->
-  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:700|Alegreya:500|Shrikhand&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -52,15 +52,15 @@
   </style>
 </head>
 
-<body>
+<body class="has-background-grey-lighter">
 
 
   <!--Header and Logo-->
   <div style="padding-top: 15px; padding-bottom: 15px;border-bottom: 4px solid orange;" class="columns has-text-centered has-background-danger">
     <div class="column is-one-quarter"></div>
     <div class="column is-one-half">
-      <h1 style="color: rgb(223, 221, 221); font-family: 'Alegreya', serif;" class="title is-1"><i
-          class="fas fa-pepper-hot"></i>&nbsp;Spicy Writer</h1>
+      <p style="color: rgb(223, 221, 221); font-family: 'Alegreya', serif;" class="is-size-1"><i
+          class="fas fa-pepper-hot"></i>&nbsp;Spicy Writer</p>
       <h1 style="color: white;font-family: 'Alegreya', serif;" class="subtitle is-4">Rewrite your article. Rephrase your
         essay.</h1>
     </div>
@@ -73,7 +73,7 @@
     <div class="column is-1"></div>
     <div class="column">
       <center>
-        <h1 style="padding-bottom: 10px; font-family: 'Alegreya', serif;" class="title is-3">Input</h1>
+        <h1 style="padding-bottom: 10px; font-family: 'Alegreya', serif;" class="is-size-3">Input</h1>
       </center>
       <textarea style="height: 80%;" class="textarea is-normal" name="userInput"
         id="userInput">Your first step before submitting your article or essay is to always use Spicy Writer! If you want to get praise from other people for your writing, then let this generator do the work for you. You will find that just a few words can change bad pieces of writing to good ones.</textarea>
@@ -100,7 +100,7 @@
 
     <div class="column">
       <center>
-        <h1 style="padding-bottom: 10px; font-family: 'Alegreya', serif;" class="title is-3">Output</h1>
+        <h1 style="padding-bottom: 10px; font-family: 'Alegreya', serif;" class="is-size-3">Output</h1>
       </center>
       <p contenteditable="true" style="height: 80%" class="textarea is-normal"
         placeholder="This will be the final output" name="output" id="output"></p>
@@ -170,6 +170,16 @@
       <div class="column is-1"></div>
     
   </section>
+
+  <!-- FOOTER SECTION -->
+
+  <footer class="footer has-background-grey-lighter">
+    <div class="content has-text-centered">
+      <p>
+        <strong class="has-text-danger">SpicyWriter</strong> by <strong class="has-text-danger">HillKing Apps</strong>
+      </p>
+    </div>
+  </footer>
 </body>
 
 
