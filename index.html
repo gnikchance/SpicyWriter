@@ -40,15 +40,66 @@
     }
 
     .changed-word {
+      font-size: 1.09em;
       font-weight: bold;
       color: #ff1a00;
       text-decoration-color: #ff1a00;
-      /* text-decoration: underline; */
+      text-decoration: underline;
+      
     }
 
-    /* .changed-word:hover {
+    .dropdownWrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdownWrapper:hover {
       cursor: pointer;
-    } */
+    }
+
+    .hiddenMenu {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .hiddenMenu:hover {
+      display: block;
+    }
+
+    .dropdownWrapper:hover .hiddenMenu {
+      display: block;
+
+    }
+
+    .hiddenMenu a {
+      color: black;
+      padding: 5px 5px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .hiddenMenu a:hover {
+      background-color: #ddd;
+      font-size: 1.05em;
+      border-left:2px solid black;
+   
+
+    }
+
+    .hiddenMenu .premium {
+      background-color: gold;
+      color: black
+    }
+
+    .hiddenMenu .premium:hover {
+      background-color: rgb(255, 217, 0);
+     
+      font-size: 1.07em;
+    }
   </style>
 </head>
 
@@ -56,7 +107,8 @@
 
 
   <!--Header and Logo-->
-  <div style="padding-top: 15px; padding-bottom: 15px;border-bottom: 4px solid orange;" class="columns has-text-centered has-background-danger">
+  <div style="padding-top: 15px; padding-bottom: 15px;border-bottom: 4px solid orange;"
+    class="columns has-text-centered has-background-danger">
     <div class="column is-one-quarter"></div>
     <div class="column is-one-half">
       <p style="color: rgb(223, 221, 221); font-family: 'Alegreya', serif;" class="is-size-1"><i
@@ -69,7 +121,8 @@
 
   <!--MAIN APPLICATION / 2 BOXES AND BUTTON -->
 
-  <div style="min-height: 65vh; margin-bottom: 0px;padding-top: 15px;" class="is-fluid columns has-background-grey-lighter">
+  <div style="min-height: 65vh; margin-bottom: 0px;padding-top: 15px;"
+    class="is-fluid columns has-background-grey-lighter">
     <div class="column is-1"></div>
     <div class="column">
       <center>
@@ -88,8 +141,8 @@
           <h1 style="padding-bottom: 10px;visibility: hidden;" class="title is-3">Spice it up!</h1>
         </center>
         <center>
-          <button style="font-family: 'Alegreya', serif; box-shadow: 1px 1px 15px red;letter-spacing: 1px;" onclick="validate();"
-            class="button is-danger is-medium is-rounded"><b>Make it Spicy</b>&nbsp;<i
+          <button style="font-family: 'Alegreya', serif; box-shadow: 1px 1px 15px red;letter-spacing: 1px;"
+            onclick="validate();" class="button is-danger is-medium is-rounded"><b>Make it Spicy</b>&nbsp;<i
               class="fas fa-pepper-hot fa-spin"></i></button>
           <p style="color:red;" id="validationMessage"></p>
           <!-- TONE ANALYZER COMING SOON -->
@@ -117,58 +170,62 @@
 
   <!--SEOH AND BODY COPY-->
   <h1 style="font-family: 'Alegreya', serif;margin: 0;padding-top: 15px;padding-bottom: 25px;letter-spacing: 1px;
-  border-top: 4px solid orangered;" 
-  class="title is-2 has-text-centered has-background-black-ter has-text-light is-fluid">Features</h1>
+  border-top: 4px solid orangered;"
+    class="title is-2 has-text-centered has-background-black-ter has-text-light is-fluid">Features</h1>
 
   <section style="margin-bottom: 0px;" class="is-fluid has-background-black-ter has-text-light columns">
 
 
-      <div class="column is-1"></div>
-      <div class="column">
-        <center>
-          <img width="100px" height="100px" src="https://image.flaticon.com/icons/svg/917/917219.svg">
-        </center>
-        <h1 style="color:rgb(221, 88, 73)" class="title is-4 has-text-centered">Better Vocabulary</h1>
-        <p>This rephrasing synonym generator <STRONG style="color:rgb(221, 88, 73)">scans your text for the most commonly used words in the English
+    <div class="column is-1"></div>
+    <div class="column">
+      <center>
+        <img width="100px" height="100px" src="https://image.flaticon.com/icons/svg/917/917219.svg">
+      </center>
+      <h1 style="color:rgb(221, 88, 73)" class="title is-4 has-text-centered">Better Vocabulary</h1>
+      <p>This rephrasing synonym generator <STRONG style="color:rgb(221, 88, 73)">scans your text for the most commonly
+          used words in the English
           language</STRONG>. Substituting those words with others of the same meaning will help you create a more
         unique, and interesting piece of writing.</p>
-        <br>
-        <p>No one wants to be known as the boring writer. Spice up your writing using our rewording synonym generator.
-          Our online rephrasing generator will remove all the most common-used words in your text, and replace them with
-          more descriptive choices.</p> 
-        
-      </div>
+      <br>
+      <p>No one wants to be known as the boring writer. Spice up your writing using our rewording synonym generator.
+        Our online rephrasing generator will remove all the most common-used words in your text, and replace them with
+        more descriptive choices.</p>
+
+    </div>
 
 
-      <div class="column">
-        <center>
-          <img style="padding: 10px" width="100px" height="100px"
-            src="https://www.flaticon.com/svg/static/icons/svg/2919/2919592.svg">
-        </center>
-        <h1 style="color:rgb(221, 88, 73)" class="title is-4 has-text-centered">Prevent Plagiarizing</h1>
-        <p>Most plagiarizing can be boiled down to two types: <strong style="color:rgb(221, 88, 73)">intended and accidental</strong>. While we never
-          condone or support plagiarizing, it is inevitable that accidental plagiarizing will happen to some people.
-          Using our online synonym generator will give you peace of mind over your writing.</p> <br>
-        <p>Our generator will rephrase your writing with more unique word choices, lowering your chance of accidentally
-          plagiarizing another person's work. By rephrasing and rewording your essay or article, your writing becomes
-          more unique - while making it a more interesting piece!</p>
-      </div>
+    <div class="column">
+      <center>
+        <img style="padding: 10px" width="100px" height="100px"
+          src="https://www.flaticon.com/svg/static/icons/svg/2919/2919592.svg">
+      </center>
+      <h1 style="color:rgb(221, 88, 73)" class="title is-4 has-text-centered">Prevent Plagiarizing</h1>
+      <p>Most plagiarizing can be boiled down to two types: <strong style="color:rgb(221, 88, 73)">intended and
+          accidental</strong>. While we never
+        condone or support plagiarizing, it is inevitable that accidental plagiarizing will happen to some people.
+        Using our online synonym generator will give you peace of mind over your writing.</p> <br>
+      <p>Our generator will rephrase your writing with more unique word choices, lowering your chance of accidentally
+        plagiarizing another person's work. By rephrasing and rewording your essay or article, your writing becomes
+        more unique - while making it a more interesting piece!</p>
+    </div>
 
-      <div class="column">
-        <center>
-          <img style="padding: 10px" width="100px" height="100px"
-            src="https://www.flaticon.com/svg/static/icons/svg/2229/2229975.svg">
-        </center>
-        <h1 style="color:rgb(221, 88, 73)" class="title is-4 has-text-centered">Analyze Tone<br><span 
+    <div class="column">
+      <center>
+        <img style="padding: 10px" width="100px" height="100px"
+          src="https://www.flaticon.com/svg/static/icons/svg/2229/2229975.svg">
+      </center>
+      <h1 style="color:rgb(221, 88, 73)" class="title is-4 has-text-centered">Analyze Tone<br><span
           style="color: rgb(241, 42, 42); font-size: .8em;">(Coming Soon)</span></h1>
-        <p>Tone dictates how <strong style="color:rgb(221, 88, 73)">how viewers hear your voice</strong>. Controlling tone is one of 
+      <p>Tone dictates how <strong style="color:rgb(221, 88, 73)">how viewers hear your voice</strong>. Controlling tone
+        is one of
         the most important aspects of succesfully presenting one's thoughts.</p> <br>
-        <p>Using A.I. (artificial intelligence), SpicyWriter helps analyze the tone of your text. Understanding how readers will view your 
-          writing will help prevent the writing coming off as aggressive, demeaning, or opinionative. 
-        </p>
-      </div>
-      <div class="column is-1"></div>
-    
+      <p>Using A.I. (artificial intelligence), SpicyWriter helps analyze the tone of your text. Understanding how
+        readers will view your
+        writing will help prevent the writing coming off as aggressive, demeaning, or opinionative.
+      </p>
+    </div>
+    <div class="column is-1"></div>
+
   </section>
 
   <!-- FOOTER SECTION -->
@@ -223,11 +280,12 @@
     $.ajax({
       url: '/submit',
       type: 'POST',
-      data: {userInput: userInput},
-      success: (userInput) => {
+      data: { userInput: userInput },
+      success: (output) => {
+        //console.log(output);
 
         console.log("Step 3: Ajax request successful");
-        document.getElementById("output").innerHTML = userInput;
+        document.getElementById("output").innerHTML = output;
 
         // console.log("Step 4: Analyzing Tone");
         // analyze();
@@ -237,13 +295,13 @@
     });
   }
 
-  function analyze(){
+  function analyze() {
     userInput = document.getElementById("userInput").value
     //AJAX TO PROCESS INPUT TO NODEJS
     $.ajax({
       url: '/analyze',
       type: 'POST',
-      data: {userInput: userInput},
+      data: { userInput: userInput },
       success: (res) => {
 
         document.getElementById("toneOutput").innerHTML = "Tone: " + res;
@@ -255,8 +313,16 @@
     });
 
 
-}
+  }
 
+
+  //If user selects another SpicyWord, or reverts back to original word, change text in OUTPUT
+
+  function changeWord(elem) {
+
+    elem.parentNode.parentNode.getElementsByTagName('span')[0].innerHTML = elem.innerText;
+
+  }
 
   //on window load, click the button for initial text to be populated
   window.onload = populateForm();

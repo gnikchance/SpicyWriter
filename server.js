@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true })); //Parse URL-encoded bodies
 const wordsData = require(__dirname + '/words.json');
 var boringWords = [];
 console.log(wordsData.words.length);
-for (i=0; i < wordsData.words.length; i++) {boringWords.push(wordsData.words[i].boringWords)}
+for (i = 0; i < wordsData.words.length; i++) { boringWords.push(wordsData.words[i].boringWords) }
 console.log(boringWords);
 
 
@@ -22,10 +22,6 @@ app.get('/', function (req, res) {
 app.post('/submit', function (req, res) {
   //gets users Input
   var userInput = req.body.userInput;
-
-  // const boringWords = ["last", "first", "get", "bad", "terrible", "wrong", "thought", "good", "make", "mean", "smart", "alot", "happen", "happens", "person", "fed", "ended", "expect", "cut", "hurt", "got", "say", "said", "agree", "think", "have", "move", "explain", "made", "people", "see", "find", "looked", "many", "different", "change", "getting", "ask", "question", "often", "give", "tell", "told", "size", "small", "goal", "partly", "do", "put", "estimated", "buy", "bought", "stay", "live", "keep", "choose", "finally", "area", "almost", "next", "new", "seem", "seems", "best", "great", "long", "old", "important", "sad", "sadness", "nice", "funny", "little", "big", "pretty"
-  // ];
-  // const spicyWords = ["final", "initial", "obtain", "egregious", "dreadful", "incorrect", "reasoned", "favorable", "generate", "harsh", "sophisticated", "plethora", "occur", "occurs", "individual", "nourished", "expired", "anticipate", "pierce", "wound", "acquired", "express", "expressed", "concur", "suspect", "possess", "progress", "justify", "produced", "individuals", "realize", "discover", "searched", "numerous", "alternative", "transform", "obtaining", "enquire", "enquiry", "frequently", "grant", "inform", "informed", "magnitude", "marginal", "objective", "partially", "perform", "place", "projected", "purchase", "purchased", "remain", "reside", "retain", "select", "ultimately", "zone", "virtually", "upcoming", "modern", "resemble", "resembles", "finest", "outstanding", "endless", "ancient", "crucial", "depressed", "sorrow", "gracious", "humorous", "minute", "colossal", "stunning"];
 
   //Validate here to make sure it's under 1000 characters
   if (userInput.length > 1000) {
@@ -47,7 +43,14 @@ app.post('/submit', function (req, res) {
       if (boringWords.includes(userInputArray[i])) {
         var index = boringWords.indexOf(userInputArray[i]);
 
-        userInputArray[i] = '<span class="changed-word">' + wordsData.words[index].spicyWords + '</span>';
+        userInputArray[i] = '<div class="dropdownWrapper"><span class="changed-word">' + wordsData.words[index].spicyWords[0] + '</span>' + 
+        '<div class="hiddenMenu"> <a onclick="changeWord(this)" href="#"><i style="color: black" class="fas fa-undo"></i> <strong>' + wordsData.words[index].boringWords + 
+        '</strong></a><a onclick="changeWord(this)" href="#"><i style="color: #ff1a00;margin-right: 5px;" class="fas fa-pepper-hot"></i>' 
+        + wordsData.words[index].spicyWords[0] + '</a><a onclick="changeWord(this)" href="#"><i style="color: #ff1a00;margin-right: 5px;" class="fas fa-pepper-hot"></i>' 
+        + wordsData.words[index].spicyWords[1] + '</a><a onclick="changeWord(this)" href="#"><i style="color: #ff1a00;margin-right: 5px;" class="fas fa-pepper-hot"></i>' 
+        + wordsData.words[index].spicyWords[2] + '</a>' 
+        //+'<a class="premium"><i style="color: blue" class="fas fa-crown"></i> Upgrade to Premium to unlock all synonyms</a>'
+        +'</div></div>';
 
 
       }
@@ -65,9 +68,9 @@ app.post('/submit', function (req, res) {
 
 });
 
-app.post('/analyze', function(req, res){
+app.post('/analyze', function (req, res) {
 
-res.send('TONE ANALYZER COMING SOON');
+  res.send('TONE ANALYZER COMING SOON');
 
 })
 
