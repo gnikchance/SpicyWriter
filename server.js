@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+app.use('/images', express.static('images'));
+
 //THIS ALLOWS US TO ACCESS THE BODY OF REQUESTS WHEN USER SUBMITS TEXT
 app.use(express.json()); //Used to parse JSON bodies
 app.use(express.urlencoded({ extended: true })); //Parse URL-encoded bodies
